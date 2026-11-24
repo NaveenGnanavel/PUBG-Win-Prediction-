@@ -1,34 +1,22 @@
-# 🎮 PUBG Win Prediction Using Machine Learning
+# PUBG Win Prediction Using Machine Learning
 
-## 📌 Project Overview
+## 1. Project Overview
 
-This project focuses on analyzing PUBG (PlayerUnknown's Battlegrounds) gameplay data and developing Machine Learning models to predict a player's final match placement (`winPlacePerc`). The project also identifies the important gameplay factors that influence winning performance.
+The **PUBG Win Prediction** project focuses on analyzing player gameplay statistics and developing Machine Learning models to predict final match placement. The primary objective is to identify the key factors influencing player performance and estimate the probability of achieving better match outcomes.
 
-## 🎯 Project Objectives
+This project involves data preprocessing, Exploratory Data Analysis (EDA), feature engineering, model development, performance evaluation, and prediction analysis using Python.
 
-- Perform Exploratory Data Analysis (EDA) on PUBG gameplay data.
-- Clean and preprocess the dataset.
-- Identify important features affecting player performance.
-- Build Machine Learning models to predict win placement.
-- Compare different models using evaluation metrics.
-- Identify the best-performing model for prediction.
+## 2. Project Objectives
 
-## 📊 Dataset Description
+- Perform comprehensive Exploratory Data Analysis on PUBG gameplay data.
+- Identify important gameplay factors affecting player performance.
+- Clean and preprocess the dataset for Machine Learning.
+- Develop multiple predictive models.
+- Compare model performance using evaluation metrics.
+- Select the best-performing model for prediction.
+- Save the trained model for future use.
 
-The dataset contains PUBG player and match statistics, including:
-
-- Player kills and assists
-- Damage dealt
-- Survival time
-- Distance travelled
-- Weapons acquired
-- Healing and boost items used
-- Match type
-- Final win placement (`winPlacePerc`)
-
-**Target Variable:** `winPlacePerc`
-
-## 🛠️ Technologies & Tools Used
+## 3. Technologies and Tools Used
 
 | Category | Technologies |
 |---|---|
@@ -37,97 +25,142 @@ The dataset contains PUBG player and match statistics, including:
 | Data Manipulation | Pandas, NumPy |
 | Data Visualization | Matplotlib, Seaborn |
 | Machine Learning | Scikit-learn |
-| Prediction Models | Linear Regression, Decision Tree, Random Forest, Gradient Boosting |
-| Model Evaluation | MAE, MSE, RMSE, R² Score |
-| Model Saving | Pickle (PKL) |
+| Algorithms | Linear Regression, Decision Tree, Random Forest, Gradient Boosting |
+| Model Serialization | Pickle |
+| Version Control | Git and GitHub |
+| Large File Storage | Git LFS |
 
-## ⚙️ Project Workflow
+## 4. Dataset Description
 
-1. **Data Loading:** Import the PUBG dataset into Jupyter Notebook.
-2. **Data Cleaning:** Handle missing values and duplicate records.
-3. **Exploratory Data Analysis:** Analyze gameplay statistics and identify patterns.
-4. **Feature Engineering:** Remove unnecessary columns such as `Id`, `groupId`, and `matchId`, and encode categorical variables using One-Hot Encoding.
-5. **Data Splitting:** Split the dataset into training and testing sets (80:20).
-6. **Model Building:** Train multiple Machine Learning regression models.
-7. **Model Evaluation:** Compare model performance using MAE, MSE, RMSE, and R² Score.
-8. **Prediction:** Predict the final player placement and examine winning probability where applicable.
-9. **Model Saving:** Save the trained model as a `.pkl` file using Pickle.
+The dataset contains PUBG player-level gameplay statistics and match information.
 
-## 🤖 Machine Learning Algorithms Used
+Important features include:
 
-- Linear Regression
-- Decision Tree Regressor
-- Random Forest Regressor
-- Gradient Boosting Regressor
+- Kills and assists
+- Damage dealt
+- Survival time
+- Distance travelled
+- Weapons acquired
+- Healing and boost items used
+- Match type
+- Final placement percentage
 
-The models are compared to identify the most suitable model based on prediction performance.
+**Target Variable:** `winPlacePerc`
 
-## 📈 Model Evaluation Metrics
+The target variable represents the player's final placement percentage in a match.
 
-- **MAE:** Measures the average absolute prediction error.
-- **MSE:** Measures the average squared prediction error.
-- **RMSE:** Measures prediction error in the original target scale.
-- **R² Score:** Measures how well the model explains variations in the target variable.
+## 5. Project Workflow
 
-## 📂 Project Structure
+### Data Preprocessing
+- Loaded and inspected the dataset.
+- Identified missing values and duplicate records.
+- Handled missing values using appropriate techniques.
+- Removed unnecessary identifier columns.
+- Converted categorical variables using One-Hot Encoding.
 
-```text
-PUBG-Win-Prediction/
-│
-├── PUBG_Win_Prediction.ipynb
-├── model.pkl
-├── README.md
-├── requirements.txt
-└── .gitignore
-```
+### Exploratory Data Analysis
+- Analyzed player gameplay statistics.
+- Studied relationships between gameplay features and winning performance.
+- Identified important patterns and correlations.
+- Visualized feature distributions and relationships.
 
-## 💻 Installation & Usage
+### Model Development
+Developed and evaluated multiple Machine Learning regression algorithms:
 
-**Step 1: Clone the repository**
+1. Linear Regression
+2. Decision Tree Regressor
+3. Random Forest Regressor
+4. Gradient Boosting Regressor
+
+### Model Evaluation
+
+The following evaluation metrics were used:
+
+- **MAE:** Mean Absolute Error
+- **MSE:** Mean Squared Error
+- **RMSE:** Root Mean Squared Error
+- **R² Score:** Coefficient of Determination
+
+The models were compared to identify the most suitable algorithm based on predictive performance.
+
+## 6. Project Files
+
+| File Name | Description |
+|---|---|
+| `Pubg Win Prediction.ipynb` | Complete project implementation, EDA, preprocessing, model training and evaluation |
+| `pubg_win_prediction_model.pkl` | Serialized trained Machine Learning model |
+| `PUBG_Model_Comparison.csv` | Performance comparison of different Machine Learning models |
+| `PUBG_Prediction_Results.csv` | Actual and predicted win placement results |
+| `PUBG_Feature_Importance.csv` | Feature importance analysis |
+| `README.md` | Project documentation |
+| `requirements.txt` | Required Python libraries |
+| `.gitattributes` | Git LFS configuration for large files |
+
+## 7. Installation and Execution
+
+### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/USERNAME/PUBG-Win-Prediction.git
+git clone https://github.com/NaveenGnanavel/PUBG-Win-Prediction-.git
 ```
 
-**Step 2: Navigate to the project folder**
+### Step 2: Navigate to the Project Directory
 
 ```bash
-cd PUBG-Win-Prediction
+cd PUBG-Win-Prediction-
 ```
 
-**Step 3: Install required libraries**
+### Step 3: Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-**Step 4: Open Jupyter Notebook**
+### Step 4: Download the Git LFS Model
+
+```bash
+git lfs pull
+```
+
+### Step 5: Launch Jupyter Notebook
 
 ```bash
 jupyter notebook
 ```
 
-Open `PUBG_Win_Prediction.ipynb` and execute the cells in sequence.
+Open `Pubg Win Prediction.ipynb` and execute the cells sequentially.
 
-## 🏆 Key Outcomes
+## 8. Key Outcomes
 
-- Analyzed PUBG gameplay data to understand player performance.
-- Identified gameplay features influencing final match placement.
-- Developed and evaluated multiple Machine Learning models.
-- Compared model performance to identify the best-performing algorithm.
-- Generated predicted win-placement values.
+- Performed data analysis to understand PUBG player performance.
+- Identified gameplay patterns associated with match placement.
+- Developed multiple Machine Learning regression models.
+- Evaluated and compared model performance using standard metrics.
+- Generated predicted placement results.
+- Saved the trained model in Pickle format for reuse.
 
-## 🔮 Future Enhancements
+## 9. Future Enhancements
 
-- Develop a web application for real-time predictions.
-- Improve model performance through hyperparameter tuning.
-- Add interactive visualizations.
+- Improve prediction accuracy through hyperparameter optimization.
+- Develop an interactive prediction dashboard.
 - Deploy the trained model using Flask or Streamlit.
+- Explore additional Machine Learning and ensemble techniques.
+- Integrate real-time gameplay statistics for prediction.
 
-## 👨‍💻 Author
+## 10. Author
 
 **Naveen Gnanavel**
 
 B.Tech – Artificial Intelligence and Data Science
 
-GitHub: https://github.com/Naveen0625
+GitHub: https://github.com/NaveenGnanavel
+
+## 11. Conclusion
+
+This project demonstrates the application of Data Analysis and Machine Learning techniques to PUBG gameplay data. By performing data preprocessing, exploratory analysis, model development, and evaluation, the project aims to predict player match placement and identify the gameplay factors that contribute to winning performance.
+
+---
+
+**Technologies:** Python | Pandas | NumPy | Matplotlib | Seaborn | Scikit-learn | Jupyter Notebook | Git | GitHub
+
+⭐ Thank you for visiting this repository!
